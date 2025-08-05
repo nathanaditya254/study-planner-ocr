@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Planner</title>
+  <script src="/static/script.js" defer></script>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    .task, .break, .schedule { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    .task input, .break input { margin: 5px 0; padding: 5px; width: 100%; }
+    button { margin-top: 10px; padding: 10px; width: 100%; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Study Task Planner</h1>
+
+    <div class="task">
+      <h3>Add Task</h3>
+      <input type="text" id="task-name" placeholder="Task name">
+      <input type="datetime-local" id="task-due-date">
+      <input type="number" id="task-duration" placeholder="Duration in minutes">
+      <input type="text" id="task-type" placeholder="Type (e.g., Study, Review)">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="break">
+      <h3>Take a Break</h3>
+      <input type="number" id="break-duration" placeholder="Break duration in minutes">
+      <button onclick="startBreak()">Start Break</button>
+    </div>
+
+    <div class="schedule">
+      <h3>Schedule</h3>
+      <button onclick="fetchSchedule()">View Schedule</button>
+      <ul id="schedule-list"></ul>
+    </div>
+
+    <div class="breaks">
+      <h3>Break History</h3>
+      <button onclick="fetchBreaks()">View Breaks</button>
+      <ul id="breaks-list"></ul>
+    </div>
+    <h3>Upload Handwritten Task</h3>
+      <input type="file" id="fileInput" accept="image/*">
+      <button onclick="document.getElementById('fileInput').click()">Choose Image</button>
+      <button onclick="uploadSelectedImage()">Upload Image for OCR</button>
+
+
+  </div>
+</body>
+</html>
