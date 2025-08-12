@@ -1,3 +1,4 @@
 /secrets
 .env
 temp.png
+.DS_Store
